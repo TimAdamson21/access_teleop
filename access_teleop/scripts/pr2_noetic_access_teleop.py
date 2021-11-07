@@ -39,7 +39,11 @@ class PR2Controller(object):
     def __init__(self):
         # Everything besides pubs, subs, services, and service proxies go here
         print("Initializing node")
-        robot = moveit_commander.RobotCommander()
+        self.robot = moveit_commander.RobotCommander()
+        self.scene = moveit_commander.PlanningSceneInterface()
+
+        self.group_right_arm = moveit_commander.MoveGroupCommander("right_arm")
+        self.group_left_arm = moveit_commander.MoveGroupCommander("left_arm")
 
         # Publishers go here
 

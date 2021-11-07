@@ -13,14 +13,14 @@ import rospy  # If you are doing ROS in python, then you will always need this i
 SLEEP_RATE = 10
 
 
-class NodeObject(object):
+class PR2Controller(object):
     """
     Note: In the init function, I will first give a description of each part, and then I will give an example
     """
 
     def __init__(self):
         # Everything besides pubs, subs, services, and service proxies go here
-        pass
+        print("Initializing node")
 
         # Publishers go here
 
@@ -33,13 +33,13 @@ class NodeObject(object):
 
 
 def main():
-    rospy.init_node("node_name")
+    rospy.init_node("pr2_noetic_access_teleop")
 
-    node_name = NodeObject()
+    pr2_controller = PR2Controller()
 
     rate = rospy.Rate(SLEEP_RATE)
 
-    # This while loop is what keeps the node from dieing
+    # This while loop is what keeps the node from dying
     while not rospy.is_shutdown():
         # If I wanted my node to constantly publish something, I would put the publishing here
         rate.sleep()

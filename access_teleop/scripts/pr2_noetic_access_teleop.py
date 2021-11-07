@@ -1,5 +1,6 @@
 #!/usr/bin/env python2
 
+from __future__ import print_function
 import rospy  # If you are doing ROS in python, then you will always need this import
 
 # Message imports go here
@@ -13,7 +14,6 @@ from std_msgs.msg import String
 # All other imports go here
 
 # Python 2/3 compatibility imports
-from __future__ import print_function
 from six.moves import input
 
 import sys

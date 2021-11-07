@@ -1,4 +1,5 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
+# NOTICE: Noetic uses python3
 
 from __future__ import print_function
 import rospy  # If you are doing ROS in python, then you will always need this import
@@ -20,15 +21,7 @@ import sys
 import copy
 import moveit_commander
 
-try:
-    from math import pi, tau, dist, fabs, cos
-except:  # For Python 2 compatibility
-    from math import pi, fabs, cos, sqrt
-
-    tau = 2.0 * pi
-
-    def dist(p, q):
-        return sqrt(sum((p_i - q_i) ** 2.0 for p_i, q_i in zip(p, q)))
+from math import pi, tau, dist, fabs, cos
 
 
 from moveit_commander.conversions import pose_to_list
